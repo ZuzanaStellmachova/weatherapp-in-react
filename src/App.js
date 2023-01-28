@@ -213,7 +213,7 @@ export default function App() {
         </div>
         <a
           className="linkRepository"
-          href="https://github.com/ZuzanaStellmachova/WeatherAppFinal"
+          href="https://github.com/ZuzanaStellmachova/weatherapp-in-react"
           target="blank"
         >
           GitHub repository
