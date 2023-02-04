@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Time from "./Time";
 import Day from "./CurrentDay";
 import Date from "./CurrentDate"
+import CurrentTemperature from "./CurrentTemperature";
 
 export default function Weather(props) {
     let [city, setCity] = useState(props.defaultCity);
@@ -75,7 +76,7 @@ export default function Weather(props) {
                     <div className="btn-location-wrapper">
                     <button className="btn-location" id="btn-location">
                         <div className="location-icon-wrapper">
-                        <img className="location-icon" src="/icons/location.png" alt="" />
+                        <img className="location-icon" src="/icons/location.svg" alt="" />
                         </div>
                         <div className="btn-location-text">Use current location</div>
                     </button>
@@ -87,15 +88,13 @@ export default function Weather(props) {
                         <div className="current-weather-icon" id="current-weather-icon">
                         <img src={`icons/${weatherData.icon}.svg`} alt="" />
                         </div>
-                        <div className="current-temperature">
-                        <span id="current-temperature">{Math.round(weatherData.temperature)}</span>°
-                        </div>
+                        <CurrentTemperature data={weatherData}/>
                     </div>
                     <div className="additional-weather-data" id="additional-weather-data">
                         <div className="current-city" id="current-city">
                         {cityHtml}
                         </div>
-                        <div className="weather-description" id="weather-description">
+                        <div className="weather-description opacity-50" id="weather-description">
                         Currently,{" "}
                         <span className="description">{weatherData.description}</span> ·{" "}
                         <span className="wind-speed" id="wind-speed">{weatherData.wind}</span>

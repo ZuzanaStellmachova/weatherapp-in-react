@@ -49,7 +49,7 @@ body {
 .current-date {
   font-size: 14px;
   line-height: 17px;
-  opacity: 0.5;
+  opacity: 0.7;
   justify-content: left;
   flex: 1;
 }
@@ -57,7 +57,7 @@ body {
 .current-time {
   font-size: 14px;
   line-height: 17px;
-  opacity: 0.5;
+  opacity: 0.7;
   flex: 1;
 }
 
@@ -169,11 +169,23 @@ img {
 .icon-temperature-wrapper {
   display: flex;
 }
+.unit-conversion {
+  cursor: pointer;
+  font-weight: 400;
+  opacity: 0.7;
+}
+.unit-conversion.active {
+  font-weight: bold;
+  opacity: 1;
+}
 
 .weather-description {
   font-size: 14px;
   line-height: 17px;
-  opacity: 0.5;
+}
+
+.opacity-50 {
+  opacity: 0.7;
 }
 
 .forecast {
@@ -214,17 +226,17 @@ img {
 .night-temperature-wrapper {
   font-weight: 400;
   font-size: 18px;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .pipe {
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 footer {
   font-size: 14px;
   line-height: 17px;
-  opacity: 0.5;
+  opacity: 0.7;
   margin-top: auto;
   display: flex;
 }
@@ -284,14 +296,14 @@ footer {
 
   .comma-date {
     display: inline-block;
-    opacity: 0.5;
+    opacity: 0.7;
     font-size: 14px;
   }
 
   .current-date {
     font-size: 14px;
     line-height: 17px;
-    opacity: 0.5;
+    opacity: 0.7;
     display: flex;
     flex-direction: row;
     flex: 0;
@@ -301,7 +313,7 @@ footer {
   .current-time {
     font-size: 14px;
     line-height: 17px;
-    opacity: 0.5;
+    opacity: 0.7;
     justify-content: center;
     flex: none;
   }
@@ -371,14 +383,14 @@ footer {
   .comma-date {
     display: inline-block;
     /* display: none; */
-    opacity: 0.5;
+    opacity: 0.7;
     font-size: 14px;
   }
 
   .current-date {
     font-size: 14px;
     line-height: 17px;
-    opacity: 0.5;
+    opacity: 0.7;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -389,7 +401,7 @@ footer {
   .current-time {
     font-size: 14px;
     line-height: 17px;
-    opacity: 0.5;
+    opacity: 0.7;
     justify-content: center;
     flex: 0;
   }
@@ -397,7 +409,7 @@ footer {
   .current-time {
     font-size: 14px;
     line-height: 17px;
-    opacity: 0.5;
+    opacity: 0.7;
     flex: 0;
   }
 
