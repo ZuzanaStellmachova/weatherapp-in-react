@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
+import Time from "./Time";
+import Day from "./CurrentDay";
+import Date from "./CurrentDate"
 
 export default function Weather(props) {
     console.log(props.defaultCity)
     let [city, setCity] = useState(props.defaultCity);
-    console.log(city)
     let [cityHtml, setCityHtml] = useState("Bratislava");
     let [weatherData, setWeatherData] = useState({ready: false});
     
@@ -14,7 +16,6 @@ export default function Weather(props) {
             coordinates: response.data.coord,
             temperature: response.data.main.temp,
             humidity: response.data.main.humidity,
-            date: new Date(response.data.dt * 1000),
             description: response.data.weather[0].description,
             icon: response.data.weather[0].icon,
             wind: response.data.wind.speed,
@@ -48,12 +49,12 @@ export default function Weather(props) {
                 <div className="top-line-wrapper" id="top-line-wrapper">
                     <div className="current-date-time-wrapper">
                     <div className="current-date" id="current-date">
-                        <span className="current-weekday">Today</span>
+                        <span className="current-weekday"><Day /></span>
                         <span className="comma">,&nbsp;</span>
-                        <span className="date">January 12</span>
+                        <span className="date"><Date /></span>
                     </div>
                     <span className="comma-date">,&nbsp;</span>
-                    <div className="current-time">15:15</div>
+                    <div className="current-time"><Time /></div>
                     </div>
     
                     <form className="city-search" id="city-search" onSubmit={handleSubmit}>
