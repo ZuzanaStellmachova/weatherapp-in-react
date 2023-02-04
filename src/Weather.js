@@ -5,9 +5,8 @@ import Day from "./CurrentDay";
 import Date from "./CurrentDate"
 
 export default function Weather(props) {
-    console.log(props.defaultCity)
     let [city, setCity] = useState(props.defaultCity);
-    let [cityHtml, setCityHtml] = useState("Bratislava");
+    let [cityHtml, setCityHtml] = useState('');
     let [weatherData, setWeatherData] = useState({ready: false});
     
     function handleResponse(response){
@@ -21,6 +20,7 @@ export default function Weather(props) {
             wind: response.data.wind.speed,
             city: response.data.name,
         })
+        setCityHtml(response.data.name)
     }
     
     function handleSubmit(event) {
@@ -217,7 +217,8 @@ export default function Weather(props) {
                     </div>
                 </div>    
             </>
-        )}
+        )
+    }
         else {
             search();
             return "Loading...";
