@@ -5,6 +5,7 @@ import Day from "./CurrentDay";
 import Date from "./CurrentDate";
 import CurrentTemperature from "./CurrentTemperature";
 import Forecast from "./Forecast"
+import WeatherIcon from "./WeatherIcon";
 
 export default function Weather(props) {
     let [city, setCity] = useState(props.defaultCity);
@@ -21,6 +22,7 @@ export default function Weather(props) {
             icon: response.data.weather[0].icon,
             wind: response.data.wind.speed,
             city: response.data.name,
+            wind: response.data.wind.speed,
         })
         setCityHtml(response.data.name)
     }
@@ -35,8 +37,9 @@ export default function Weather(props) {
     }
     
     function search(){
-        let apiKey = "e6a8e0adb58c9406a8105c0fddd29983";
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+        // let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
         axios.get(apiUrl).then(handleResponse);
     }
 
@@ -86,16 +89,14 @@ export default function Weather(props) {
                 <div className="app-wrapper" id="app-wrapper">
                     <div className="current-data-wrapper" id="current-data-wrapper">
                     <div className="icon-temperature-wrapper">
-                        <div className="current-weather-icon" id="current-weather-icon">
-                        <img src={`icons/${weatherData.icon}.svg`} alt="" />
-                        </div>
+                        <WeatherIcon data={weatherData}/>
                         <CurrentTemperature data={weatherData}/>
                     </div>
                     <div className="additional-weather-data" id="additional-weather-data">
                         <div className="current-city" id="current-city">
                         {cityHtml}
                         </div>
-                        <div className="weather-description opacity-50" id="weather-description">
+                        <div className="weather-description opacity-70" id="weather-description">
                         Currently,{" "}
                         <span className="description">{weatherData.description}</span> ·{" "}
                         <span className="wind-speed" id="wind-speed">{weatherData.wind}</span>
@@ -104,7 +105,7 @@ export default function Weather(props) {
                     </div>
                     </div>
     
-                    <Forecast />
+                    <Forecast data={weatherData}/>
                 </div>    
             </>
         )
