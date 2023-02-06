@@ -22,7 +22,6 @@ export default function Weather(props) {
             icon: response.data.weather[0].icon,
             wind: response.data.wind.speed,
             city: response.data.name,
-            wind: response.data.wind.speed,
         })
         setCityHtml(response.data.name)
     }
@@ -39,8 +38,6 @@ export default function Weather(props) {
     function search(){
         let apiKey = "f3009e4852fa0a079dab291dabf020c4";
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-        // let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
         axios.get(apiUrl).then(handleResponse);
     }
 
@@ -106,7 +103,8 @@ export default function Weather(props) {
                     </div>
                     </div>
     
-                    <Forecast data={weatherData}/>
+                    <Forecast weatherData={weatherData}/>
+                    {/* <WeatherIcon weatherData={weatherData} /> */}
                 </div>    
             </>
         )
