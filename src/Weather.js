@@ -42,7 +42,6 @@ export default function Weather(props) {
         axios.get(apiUrl)
         .then(handleResponse)
         .catch(function (error) {
-            navigator.userAgent = 'Weather App';
             alert('city not found');
             console.log(error.toJSON());
         });
@@ -92,14 +91,14 @@ export default function Weather(props) {
                         autoComplete="off"
                     />
                     <button className="btn-search" id="btn-search" type="submit">
-                        <img className="search-icon" src="/icons/search.svg" alt="Search" />
+                        <img className="search-icon" src="/icons/search.svg" alt="Search" width={24} height={28}/>
                     </button>
                     </form>
     
                     <div className="btn-location-wrapper">
                     <button className="btn-location" id="btn-location" onClick={getCurrentPosition}>
                         <div className="location-icon-wrapper">
-                        <img className="location-icon" src="/icons/location.svg" alt="" />
+                        <img className="location-icon" src="/icons/location.svg" alt="" width={24} height={28} />
                         </div>
                         <div className="btn-location-text">Use current location</div>
                     </button>

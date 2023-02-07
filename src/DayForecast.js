@@ -23,7 +23,7 @@ export default function DayForecast(props) {
 
     return (
         <div className="day-forecast" id="day-forecast-0">
-                <img src={`icons/${props.forecastData.condition.icon}.svg`} alt="" />
+                <img src={`icons/${props.forecastData.condition.icon}.svg`} alt="" width={48} height={48}/>
                 <div className="temperature-wrapper">
                   <div className="day-temperature-wrapper">
                     <span className="day-temperature" id="day-temperature-0">
