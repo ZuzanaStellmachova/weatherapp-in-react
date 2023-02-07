@@ -42,6 +42,7 @@ export default function Weather(props) {
         axios.get(apiUrl)
         .then(handleResponse)
         .catch(function (error) {
+            navigator.userAgent = 'Weather App';
             alert('city not found');
             console.log(error.toJSON());
         });
